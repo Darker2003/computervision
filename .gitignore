@@ -1,2 +1,10 @@
 data
 images
+dataset
+best_model_tuning.pth
+mlartifacts
+mlruns
+amd.zip
+nvidia.zip
+models
+onnx.zip
