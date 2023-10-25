@@ -18,8 +18,8 @@ loaded_model = mlflow.pytorch.load_model(f"runs:/{run_id}/pytorch-model")
 class Config:
     def __init__(self):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'  # Thiết bị sử dụng (cuda hoặc cpu)
-        self.train_dir = "../../dataset/train/"  # Đường dẫn đến dữ liệu huấn luyện
-        self.test_dir = '../../dataset/test/'
+        self.train_dir = "dataset/train/"  # Đường dẫn đến dữ liệu huấn luyện
+        self.test_dir = 'dataset/test/'
         self.num_classes = None
         self.class_names = None
         self.batch_size = 16

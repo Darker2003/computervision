@@ -10,7 +10,7 @@ class Trainer:
         self.patience = cfg.patience
         self.max_epochs = cfg.max_epochs
         self.device = cfg.device
-        self.mlflow = cfg.mlflow
+        
 
         self.model_best_loss = None
         self.train_F1 = []
@@ -39,12 +39,8 @@ class Trainer:
         if scheduler is not None:
             scheduler.step()
         f1 = f1_score(y_true, y_pred, average='micro')
-
         self.train_F1.append(f1)
         self.loss_train.append(total_loss / len(self.train_loader))
-
-        self.mlflow.log_metric("train_loss", total_loss / len(self.train_loader))
-        self.mlflow.log_metric("train_f1", f1)
         
     def test_one_epoch(self, criterion):
         self.model.eval()
@@ -66,9 +62,6 @@ class Trainer:
         f1 = f1_score(y_true, y_pred, average='micro')
         self.test_F1.append(f1)
         self.loss_test.append(total_loss / len(self.test_loader))
-
-        self.mlflow.log_metric("test_loss", total_loss / len(self.test_loader))
-        self.mlflow.log_metric("test_f1", f1)
 
     def train(self, optimizer, scheduler, criterion):
         self.model.to(self.device)

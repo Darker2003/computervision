@@ -5,8 +5,8 @@ import torch.nn as nn
 import torch.optim as optim
 import optuna
 from train import Trainer
-from dataset import DataPreparation
-from models import *
+from dataset_prepare import DataPreparation
+from models_frozen import *
 from eval import evaluate_model
 from sklearn.metrics import f1_score
 import warnings
@@ -16,8 +16,8 @@ warnings.filterwarnings('ignore')
 class Config:
     def __init__(self):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'  # Thiết bị sử dụng (cuda hoặc cpu)
-        self.train_dir = "../../dataset/train/"  # Đường dẫn đến dữ liệu huấn luyện
-        self.test_dir = '../../dataset/test/'
+        self.train_dir = "dataset/train/"  # Đường dẫn đến dữ liệu huấn luyện
+        self.test_dir = 'dataset/test/'
         self.num_classes = None
         self.class_names = None
         self.batch_size = 64
