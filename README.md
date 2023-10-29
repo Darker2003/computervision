@@ -105,9 +105,6 @@ Help from you in contributing content would be very much appreciated!
 
 This course has **practical** content that covers basic to advanced, from practising myself to applying for a job. 
 
-## Who is this for?
-
-Anybody who wants to land a job at a tech company but is new to technical interviews, seasoned engineers who have not been on the other side of the interviewing table in a while and want to get back into the game, or anyone who wants to be better at technical interviewing.
 
 ---
 
